@@ -13,6 +13,7 @@ import { green } from '@material-ui/core/colors';
 // const api_key = finnhub.ApiClient.instance.authentications['api_key'];
 // api_key.apiKey = "c3e7in2ad3ief4elcsn0" // Replace this
 // const finnhubClient = new finnhub.DefaultApi()
+// https://finnhub.io/api/v1/stock/financials-reported?symbol=AAPL&token=c3e7in2ad3ief4elcsn0
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -70,13 +71,14 @@ const TopGainersLosers = ({ showSidebar }) => {
     const [Gainersbtn, setGainersbtn] = useState(true);
     const [Losersbtn, setLosersbtn] = useState(false);
 
-    const urlGainers = "https://cloud.iexapis.com/stable/stock/market/list/gainers?token=sk_9469d565ae4c4fc491b16ca8767d8a1e";
-    const urlLosers = "https://cloud.iexapis.com/stable/stock/market/list/losers?token=sk_9469d565ae4c4fc491b16ca8767d8a1e";
-
+    const urlGainers = "https://cloud.iexapis.com/stable/stock/market/list/gainers?token=sk_9b43110c530b43f3929296619e077129";
+    const urlLosers = "https://cloud.iexapis.com/stable/stock/market/list/losers?token=sk_9b43110c530b43f3929296619e077129";
+    // https://cloud.iexapis.com/stable/stock/market/list/mostactive?token=sk_9b43110c530b43f3929296619e077129
     const{data:gainers, error:errGainers, isPending:isPendingGainers} = useFetch(urlGainers);
     const{data:losers, error:errLosers, isPending:isPendingLosers} = useFetch(urlLosers);
 
     console.log(gainers);
+    
     const renderStock = (stock, index) => {
         return(
             <tr key = {index}>

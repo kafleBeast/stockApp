@@ -8,9 +8,10 @@ import Typography from '@material-ui/core/Typography';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import IconButton from '@material-ui/core/IconButton';
-
-import profile_url from '../media/stock.jpg';
+import IconButton from '@material-ui/core/IconButton'; 
+import mainAnimation from '../media/stock_futuristic.mov';
+import upwardTrendAnimation from '../media/upwardTrend.mp4';
+import downwardTrendAnimation from '../media/downwardTrend.mp4';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -42,9 +43,20 @@ const LandingPage = ({ showSidebar }) => {
     return (
         <div className='container' onClick={showSidebar}>
             <div className="Video">
-                <h1 className='texthead'  >Invest, Grow, Build</h1>
-                {/* <video src="./Videos/stockVid.mp4" loop={true} autoPlay={true} muted></video> */}
-                <img src={profile_url} alt="profile" width='100%' height='100%' />
+                <h1 className='texthead'>Invest, Grow, Build</h1>
+                <h3 className="buyHighSellLow">Buy High, Sell Low!</h3>
+                <video id="downwardTrend" autoPlay loop muted>
+                    <source src={downwardTrendAnimation} type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
+                <video id="main-video" autoPlay loop muted>
+                    <source src={mainAnimation} type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
+                <video id="upwardTrend" autoPlay loop muted>
+                    <source src={upwardTrendAnimation} type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
             </div>
 
             <div className="linegraph">

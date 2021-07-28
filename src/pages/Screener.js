@@ -64,8 +64,8 @@ const Screener = ({showSidebar}) => {
     };
 
     return (
-        <>
-        <div className="screener" onClick={showSidebar}>
+        <div className="container" onClick = {showSidebar}>
+        <div className="screener">
             <h1>Screener</h1>
             <form onSubmit={handleSubmit}>
                 <label>Name</label>
@@ -207,7 +207,7 @@ const Screener = ({showSidebar}) => {
                 </tbody>
             </ReactBootStrap.Table>
         </div>
-        </>
+        </div>
     )
 }
 
